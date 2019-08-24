@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kanit|Quattrocento&display=swap");
+
+.HeadingAndButton {
+  margin: auto;
+  font-family: "Cinzel", serif;
+}
+
+#q {
+  font-family: "Quattrocento", serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
