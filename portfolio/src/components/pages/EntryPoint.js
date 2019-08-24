@@ -22,19 +22,42 @@ const background = {
 
 const quotes = {
   quote1: {
-    text: "Truth is a pathless land",
-    author: "Jiddu Krishnamurti"
+    text:
+      "The most valuable of all education is the ability to make yourself do the thing you have to do, when it has to be done, whether you like it or not",
+    author: "Alduos Huxley"
   },
 
   quote2: {
-    text: "Work on your own salvation. Do not depend on others",
+    text:
+      "The past is already gone, the future is not yet here. There’s only one moment for you to live",
     author: "Siddhartha Guatama"
   },
 
   quote3: {
+    text: "Truth is a pathless land",
+    author: "Jiddu Krishnamurti"
+  },
+
+  quote4: {
+    text: "You don't understand anything until you learn it more than one way",
+    author: "Marvin Minsky"
+  },
+
+  quote5: {
     text:
-      "The most valuable of all education is the ability to make yourself do the thing you have to do, when it has to be done, whether you like it or not",
-    author: "Alduos Huxley"
+      "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops",
+    author: "Joseph Weizenbaum"
+  },
+
+  quote6: {
+    text: "You are what you do, not what you say you'll do",
+    author: "Carl Jung"
+  },
+
+  quote7: {
+    text:
+      "There is no end to education. It is not that you read a book, pass an examination, and finish with education. The whole of life, from the moment you are born to the moment you die, is a process of learning",
+    author: "Jiddu Krishnamurti"
   }
 };
 
@@ -46,7 +69,8 @@ const H1 = posed.div({
     opacity: 1,
     delay: 300,
     transition: {
-      duration: 300
+      y: { type: "spring", stiffness: 1000, damping: 15 },
+      default: { duration: 300 }
     }
   },
   exit: {
@@ -87,7 +111,7 @@ export default class EntryPoint extends Component {
     const { isVisible } = this.state;
     return (
       <div style={background}>
-        <div
+        <Container
           className="container"
           style={{
             textAlign: "center",
@@ -98,13 +122,13 @@ export default class EntryPoint extends Component {
           }}
         >
           {isVisible && (
-            <H1 id="q">
+            <H1 key="H1" pose="enter" id="q">
               {`"${this.state.randQuote.text}"`}
               {" ~ "}
               {this.state.randQuote.author}
             </H1>
           )}
-        </div>
+        </Container>
 
         <Container
           className="text-center"
